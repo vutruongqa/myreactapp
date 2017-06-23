@@ -18,6 +18,9 @@ Insall webpack to bundle your web application
 - npm install --save-dev webpack@1.12.13 babel-core@6.5.1  babel-loader@6.2.2 babel-preset-es2015@6.5.0 babel-preset-react@6.5.0
 - pay attention at webpack.config.js
 
+**NOTES: In case you delete the node_modules folder, rerun npm install to reinstall this folder
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +98,17 @@ var About = (props) => {
 
 
 --------------------------------
+Install heroku
+install heroku cli
 
+heroku login
+heroku auth:whoami to verify
+
+iN Package.json
+add this in the script section to make heroku understand it  "start":"node server.js"  
+
+in SERVER.JS, set the port like this because heroku does not always work in port 3000
+var port = process.env.PORT || 3000;
 
 
 
