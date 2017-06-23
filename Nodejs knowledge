@@ -110,7 +110,9 @@ add this in the script section to make heroku understand it  "start":"node serve
 in SERVER.JS, set the port like this because heroku does not always work in port 3000
 var port = process.env.PORT || 3000;
 
+heroku create
 
+git push heroku master
 
 
  
