@@ -114,6 +114,16 @@ heroku create
 
 git push heroku master
 
+//handle http and https case because Heroku only process http request
+app.use(function(req,res,next){
+    if(req.headers['x-forwarded-proto'] === 'http'){
+        next();
+    }
+    else{
+        res.redirect('http://' + req.hostname + req.url);
+    }
+});
+
 
  
  
