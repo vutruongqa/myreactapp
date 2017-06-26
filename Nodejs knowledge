@@ -116,14 +116,18 @@ git push heroku master
 
 //handle http and https case because Heroku only process http request
 app.use(function(req,res,next){
-    if(req.headers['x-forwarded-proto'] === 'http'){
-        next();
+    if(req.headers['x-forwarded-proto'] === 'https'){
+        res.redirect('http://' + req.hostname + req.url);
     }
     else{
-        res.redirect('http://' + req.hostname + req.url);
+         next();
     }
 });
 
+---------------------------------------------------
+Installing Foundation for the CSS decoration
+
+npm install css-loader@0.23.1 script-loader@0.6.1 style-loader@0.13.0
 
  
  
